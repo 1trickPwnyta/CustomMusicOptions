@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<CustomMusicOptions_DisableVanillaMusic>Disable all other music</CustomMusicOptions_DisableVanillaMusic>
+	<CustomMusicOptions_SongTypeDesc>Situation in which to play</CustomMusicOptions_SongTypeDesc>
 </LanguageData>

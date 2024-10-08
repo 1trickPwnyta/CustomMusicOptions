@@ -14,6 +14,15 @@ namespace CustomMusicOptions
         {
             foreach (CodeInstruction instruction in instructions)
             {
+                if (instruction.opcode == OpCodes.Ldstr && instruction.operand.ToString() == "UI/Icons/Colonistbar/Attacking")
+                {
+                    instruction.operand = "UI/Icons/Colonistbar/Idle";
+                }
+                if (instruction.opcode == OpCodes.Ldstr && instruction.operand.ToString() == "CustomMusic_tense_desc")
+                {
+                    instruction.operand = "CustomMusicOptions_SongTypeDesc";
+                }
+
                 if (instruction.opcode == OpCodes.Call && instruction.operand is MethodInfo && (MethodInfo)instruction.operand == typeof(Widgets).Method(nameof(Widgets.Checkbox), new[] { typeof(Vector2), typeof(bool).MakeByRefType(), typeof(float), typeof(bool), typeof(bool), typeof(Texture2D), typeof(Texture2D) }))
                 {
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 16);
